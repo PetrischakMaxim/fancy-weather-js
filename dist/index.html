@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
 
 <head>
   <meta charset="UTF-8" />
@@ -12,8 +12,115 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body class="app">
-  <h1>Run!</h1>
+<body class="page__body">
+  <div class="page__wrapper">
+    <header class="page__header">
+      <h1 class="visually-hidden">
+        Fancy Weather App
+      </h1>
+      <nav class="page__navigation">
+        <div class="columns">
+          <div class="left-col">
+            <form action="#" class="controls-form">
+              <fieldset class="controls__item">
+                <button class="controls__btn controls__btn--update">update</button>
+              </fieldset>
+              <fieldset class="controls__item">
+                <div class="controls-form__field">
+                  <label for="lang-field">Select language</label>
+                  <select name="lang" id="lang-field">
+                    <option value="ru" selected>Ru</option>
+                    <option value="en">Eng</option>
+                    <option value="be">Be</option>
+                  </select>
+                </div>
+              </fieldset>
+              <fieldset class="controls__item">
+                <label for="fahrenheit-field">
+                  °F
+                  <input name="temperature" type="radio" id="fahrenheit-field" value="fahrenheit">
+                </label>
+                <label for="celsium-field">
+                  °С
+                  <input name="temperature" type="radio" id="celsium-field" value="celsium" checked>
+                </label>
+              </fieldset>
+            </form>
+          </div>
+          <div class="right-col">
+            <form action="#" class="search-form">
+              <fieldset>
+                <input type="search" name="search" id="search-field" placeholder="Search city or ZIP" required>
+              </fieldset>
+              <fieldset>
+                <button type="submit">Search</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="page__main">
+      <div class="columns">
+        <div class="left-col">
+          <div class="data">
+            <ul class="data__list">
+              <li class="data__item data__item--city">
+                Minsk, Belarus
+              </li>
+              <li class="data__item data__item--date">
+                Mon 28 October 17:23
+              </li>
+              <li class="data__item data__item--result">
+                <p class="data__temperature">10°С</p>
+                <p class="data__info">
+                  overcast
+                  Feels like: 7°
+                  Wind: 2 m/s
+                  Humidity: 83%
+                </p>
+              </li>
+              <li class="data__item data__item--stats">
+                <table class="data__stats">
+                  <tr>
+                    <th class="data__day">Tuesday</th>
+                    <th class="data__day">Tuesday</th>
+                    <th class="data__day">Tuesday</th>
+                  </tr>
+                  <tr>
+                    <td class="data__desription">
+                      7°
+                    </td>
+                    <td class="data__desription">
+                      7°
+                    </td>
+                    <td class="data__desription">
+                      7°
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-col">
+          <div class="location">
+            <div class="location__map" id="location-map">
+              <img src="./img/thumbnail.jpg" alt="">
+            </div>
+            <dl class="location__data">
+              <dt>Latitude: </dt>
+              <dd>27°34'</dd>
+              <dt>Longitude:</dt>
+              <dd>53°54'</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
   <!-- JavaScript -->
   <script src="./js/bundle.js"></script>
 </body>
