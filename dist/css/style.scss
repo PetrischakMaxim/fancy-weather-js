@@ -1,4 +1,5 @@
-$font: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+@import "normalize.scss";
+$font: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
@@ -51,6 +52,7 @@ $success: #9575cd;
 $danger: #e57373;
 $light: #ffffff;
 $dark: #000000;
+$offset: 2rem;
 
 html {
   box-sizing: border-box;
@@ -70,6 +72,19 @@ a {
   color: inherit;
 }
 
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 body {
   min-width: 300px;
   height: 100%;
@@ -84,9 +99,118 @@ body {
   background-color: rgba($success, 0.5);
 }
 
+.page__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-col,
+.right-col {
+  flex: 1 1 50;
+}
+
+.page__header {
+  padding: $offset 0;
+
+  background-color: $primary;
+}
+
+.search-form,
+.controls-form {
+  display: flex;
+}
+
+.page__main {
+  flex-grow: 1;
+  padding: $offset * 2;
+
+  background-color: $success;
+}
+
+/* Data */
+.data__list {
+  display: grid;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  grid-gap: $offset;
+  grid-template-areas: "city date"
+  "result result"
+  "stats stats";
+}
+
+.data__item--city {
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+
+  grid-area: city;
+}
+.data__item--date {
+  font-size: 2rem;
+
+  grid-area: date;
+}
+.data__item--result {
+  display: flex;
+
+  grid-area: result;
+}
+.data__item--stats {
+  grid-area: stats;
+}
+
+.data__info {
+  list-style: none;
+}
+.data__temperature {
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.data__stats {
+  th {
+    font-weight: bold;
+    font-size: 3.6rem;
+    color: $accent;
+    text-transform: uppercase;
+  }
+  td {
+    font-size: 2.5rem;
+    color: $dark;
+  }
+}
+
+/* Location */
+.location__map {
+  margin-bottom: $offset;
+
+  border-radius: 8px;
+  img,
+  iframe {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+
+    border-radius: inherit;
+    cursor: pointer;
+  }
 }
