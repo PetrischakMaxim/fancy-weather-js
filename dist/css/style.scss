@@ -14,20 +14,14 @@ $font: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 }
 
 .material-icons {
-  display: inline-block;
-
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 1;
+  font-size: 2.4rem;
   font-family: "Material Icons";
   direction: ltr;
   text-transform: none;
   letter-spacing: normal;
-  white-space: nowrap;
   word-wrap: normal;
-
-/*   -webkit-font-feature-settings: "liga"; */
 
   -webkit-font-smoothing: antialiased;
 }
@@ -38,7 +32,7 @@ $font: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 }
 
 @mixin text-shadow() {
-  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.14);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.34);
 }
 
 @mixin trs() {
@@ -72,6 +66,13 @@ a {
   color: inherit;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
 .visually-hidden {
   position: absolute;
 
@@ -95,14 +96,16 @@ body {
   line-height: 1.42;
   font-family: $font;
   color: $light;
-
-  background-color: rgba($success, 0.5);
 }
 
 .page__wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  background: linear-gradient(rgba($success, 0.5), rgba($success, 0.5)),
+  url("https://source.unsplash.com/user/erondu") no-repeat center top / cover,
+  rgba($success, 0.5);
 }
 
 .container {
@@ -119,27 +122,119 @@ body {
   align-items: center;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .left-col,
 .right-col {
-  flex: 1 1 50;
+  flex: 1 1 50%;
 }
-
+/* Header */
 .page__header {
   padding: $offset 0;
-
-  background-color: $primary;
 }
 
-.search-form,
-.controls-form {
+.form {
   display: flex;
+  align-items: center;
+}
+.form--search {
+  justify-content: flex-end;
 }
 
+.form__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2.5px;
+
+  color: $success;
+}
+
+[name="temperature"] {
+  display: none;
+  span {
+    @include trs();
+  }
+  &:checked {
+    + span {
+      color: $danger;
+
+      transform: scale(1.2);
+    }
+  }
+}
+
+.form__toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+
+  font-weight: 700;
+  color: inherit;
+
+  background-color: $accent;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  outline: $success;
+  cursor: pointer;
+
+@include shadow();
+
+@include trs();
+
+  &:focus {
+    outline-color: $success;
+  }
+  &:hover {
+    color: darken($success, 10%);
+
+    background-color: darken($accent, 10%);
+  }
+  &:active {
+    color: darken($success, 15%);
+
+    background-color: darken($accent, 5%);
+  }
+}
+
+.form__input,
+.form__select {
+  width: 100%;
+  padding: 5px;
+
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: $success;
+
+  background-color: $light;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  cursor: pointer;
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus {
+    outline: currentColor;
+
+@include shadow();
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+/* Main */
 .page__main {
   flex-grow: 1;
-  padding: $offset * 2;
-
-  background-color: $success;
+  padding: $offset * 2 0;
 }
 
 /* Data */
@@ -153,53 +248,71 @@ body {
 
   grid-gap: $offset;
   grid-template-areas: "city date"
-  "result result"
+  "result descr"
   "stats stats";
 }
 
 .data__item--city {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 6rem;
+  line-height: 1.1;
   text-transform: uppercase;
 
   grid-area: city;
 }
 .data__item--date {
-  font-size: 2rem;
+  font-size: 4rem;
 
   grid-area: date;
 }
 .data__item--result {
-  display: flex;
+  text-align: center;
 
   grid-area: result;
+}
+.data__item--descr {
+  grid-area: descr;
 }
 .data__item--stats {
   grid-area: stats;
 }
 
 .data__info {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 .data__temperature {
-  font-size: 5rem;
+  margin: 0;
+
+  font-weight: bold;
+  font-size: 8rem;
   text-align: center;
   text-transform: uppercase;
 }
 .data__stats {
+  width: 100%;
+
+  font-weight: bold;
+  text-align: center;
   th {
-    font-weight: bold;
-    font-size: 3.6rem;
+    font-size: 2rem;
     color: $accent;
     text-transform: uppercase;
   }
   td {
-    font-size: 2.5rem;
-    color: $dark;
+    font-size: 5rem;
+    color: $light;
   }
 }
 
 /* Location */
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .location__map {
   margin-bottom: $offset;
 
@@ -208,9 +321,85 @@ body {
   iframe {
     display: block;
     max-width: 100%;
+    margin: 0 auto;
     overflow: hidden;
 
     border-radius: inherit;
     cursor: pointer;
+  }
+}
+.location__data {
+  width: 100%;
+
+  font-weight: bold;
+  text-align: center;
+  th {
+    color: $accent;
+  }
+  td {
+    color: $light;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 960px) {
+  html {
+    font-size: 52.5%;
+  }
+  .columns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .left-col,
+  .right-col {
+    flex: initial;
+    margin: 2.5px 0;
+  }
+  .page__main {
+    padding: 0;
+  }
+  .form--search {
+    justify-content: start;
+  }
+  .form__item--full {
+    flex-grow: 1;
+  }
+  .data__list {
+    grid-gap: 5px;
+    grid-template-areas: "city"
+    "date"
+    "result"
+    "descr"
+    "stats";
+  }
+  .data__info {
+    text-align: center;
+  }
+  .location {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+
+@media (max-width: 568px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 47.5%;
   }
 }

@@ -13,55 +13,73 @@
 
 <body class="page__body">
   <div class="page__wrapper">
+
     <header class="page__header">
       <h1 class="visually-hidden">
         Fancy Weather App
       </h1>
       <div class="container">
-        <nav class="page__navigation">
-          <div class="columns">
-            <div class="left-col">
-              <form action="#" class="controls-form">
-                <fieldset class="controls-form__item">
-                  <button class="controls-form__btn controls-form__btn--update">update</button>
-                </fieldset>
-                <fieldset class="controls-form__item">
-                  <div class="controls-form__field">
-                    <label for="lang-field">Select language</label>
-                    <select name="lang" id="lang-field">
-                      <option value="ru" selected>Ru</option>
-                      <option value="en">Eng</option>
-                      <option value="be">Be</option>
-                    </select>
-                  </div>
-                </fieldset>
-                <fieldset class="controls-form__item">
-                  <label for="fahrenheit-field">
-                    °F
-                    <input name="temperature" type="radio" id="fahrenheit-field" value="fahrenheit">
-                  </label>
-                  <label for="celsium-field">
-                    °С
-                    <input name="temperature" type="radio" id="celsium-field" value="celsium" checked>
-                  </label>
-                </fieldset>
-              </form>
-            </div>
-            <div class="right-col">
-              <form action="#" class="search-form">
-                <fieldset>
-                  <input type="search" name="search" id="search-field" placeholder="Search city or ZIP" required>
-                </fieldset>
-                <fieldset>
-                  <button type="submit">Search</button>
-                </fieldset>
-              </form>
-            </div>
+        <nav class="page__navigation"></nav>
+        <div class="columns">
+          <div class="left-col">
+            <form action="#" class="form form--control">
+              <fieldset class="form__item">
+                <button data-action="update-bg" class="form__toggler"><i class="material-icons">autorenew</i></button>
+              </fieldset>
+              <fieldset class="form__item form__item--full">
+                <div data-action="change-lang" class="form__toggler flex-container ">
+                  <label for="lang-field"><i class="material-icons">language</i></label>
+                  <select class="form__select" name="lang" id="lang-field">
+                    <option value="default" hidden>language</option>
+                    <option value="ru" selected>Ru</option>
+                    <option value="en">Eng</option>
+                    <option value="be">Be</option>
+                  </select>
+                </div>
+              </fieldset>
+              <fieldset class="form__item">
+                <label data-action="change-to-f" class="form__toggler" for="fahrenheit-field">
+                  <input name="temperature" type="radio" id="fahrenheit-field" value="fahrenheit">
+                  <span> °F</span>
+                </label>
+              </fieldset>
+              <fieldset class="form__item">
+                <label data-action="change-to-c" class="form__toggler" for="celsium-field">
+                  <input name="temperature" type="radio" id="celsium-field" value="celsium" checked>
+                  <span>°С</span>
+                </label>
+              </fieldset>
+            </form>
           </div>
-        </nav>
+          <div class="right-col">
+            <form action="#" class="form form--search">
+              <fieldset class="form__item form__item--full">
+                <label class="form__toggler" for="search-field">
+                  <input class="form__input" type="search" name="search" id="search-field"
+                    placeholder="Search city or ZIP" required>
+                </label>
+              </fieldset>
+              <fieldset class="form__item">
+                <button class="form__toggler">
+                  <i class="material-icons">
+                    keyboard_voice
+                  </i>
+                </button>
+              </fieldset>
+              <fieldset class="form__item">
+                <button class="form__toggler" type="submit">
+                  <i class="material-icons">
+                    search
+                  </i>
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
       </div>
 
     </header>
+
     <main class="page__main">
       <div class="container">
         <div class="columns">
@@ -76,6 +94,9 @@
                 </li>
                 <li class="data__item data__item--result">
                   <p class="data__temperature">10°С</p>
+
+                </li>
+                <li class="data__item data__item--descr">
                   <ul class="data__info">
                     <li class="data__image"></li>
                     <li>overcast</li>
@@ -127,6 +148,7 @@
         </div>
       </div>
     </main>
+
   </div>
 
   <!-- JavaScript -->
