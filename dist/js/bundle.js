@@ -3842,10 +3842,35 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCurrentBackgroud */ \"./src/modules/setCurrentBackgroud.js\");\n/* harmony import */ var _modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getCurrentBackground */ \"./src/modules/getCurrentBackground.js\");\n/* import getCurrentDate from './modules/getCurrentDate'; */\n\n\n/*\r\nconst dateList = {\r\n  now: new Date(new Date() - 1),\r\n};\r\n */\n\nvar pageWrapper = document.querySelector('.page__wrapper');\nvar pageControls = document.querySelectorAll('.form__toggler');\npageControls.forEach(function (control) {\n  control.addEventListener('click', function (evt) {\n    var currentButton = evt.target;\n    console.log(currentButton);\n\n    if (currentButton.dataset.action === 'update-bg') {\n      Object(_modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('morning').then(function (data) {\n        return Object(_modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(pageWrapper, data);\n      });\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getCurrentBackground.js":
+/*!*********************************************!*\
+  !*** ./src/modules/getCurrentBackground.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getCurrentBackground; });\nfunction getCurrentBackground(word) {\n  var apiUrl = \"https://api.unsplash.com/photos/random?query=\".concat(word, \"&client_id=w5rS4NQKiTV0yemZ6Ww7VWaBWbLIYB4bsw5-4pbBOl4\");\n  return fetch(apiUrl).then(function (res) {\n    return res.json();\n  }).then(function (data) {\n    return data.urls.regular;\n  });\n}\n\n//# sourceURL=webpack:///./src/modules/getCurrentBackground.js?");
+
+/***/ }),
+
+/***/ "./src/modules/setCurrentBackgroud.js":
+/*!********************************************!*\
+  !*** ./src/modules/setCurrentBackgroud.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setCurrentBackground; });\nfunction setCurrentBackground(element, source) {\n  element.style.backgroundImage = \"url(\".concat(source, \")\");\n  console.log(element);\n}\n\n//# sourceURL=webpack:///./src/modules/setCurrentBackgroud.js?");
 
 /***/ }),
 

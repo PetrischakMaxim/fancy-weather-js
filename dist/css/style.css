@@ -354,6 +354,7 @@ template {
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
+  pointer-events: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -407,7 +408,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(rgba(149, 117, 205, 0.5), rgba(149, 117, 205, 0.5)), url("https://source.unsplash.com/user/erondu") no-repeat center top/cover, rgba(149, 117, 205, 0.5);
+  background-color: #9575cd;
+  background-image: url("https://source.unsplash.com/user/erondu");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-blend-mode: overlay;
+  transition: background 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .container {
