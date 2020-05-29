@@ -565,6 +565,7 @@ body {
 
 .data__item--date {
   font-size: 4rem;
+  text-transform: capitalize;
   grid-area: date;
 }
 

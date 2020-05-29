@@ -3846,7 +3846,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCurrentBackgroud */ \"./src/modules/setCurrentBackgroud.js\");\n/* harmony import */ var _modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getCurrentBackground */ \"./src/modules/getCurrentBackground.js\");\n/* import getCurrentDate from './modules/getCurrentDate'; */\n\n\n/*\r\nconst dateList = {\r\n  now: new Date(new Date() - 1),\r\n};\r\n */\n\nvar pageWrapper = document.querySelector('.page__wrapper');\nvar pageControls = document.querySelectorAll('.form__toggler');\npageControls.forEach(function (control) {\n  control.addEventListener('click', function (evt) {\n    var currentButton = evt.target;\n    console.log(currentButton);\n\n    if (currentButton.dataset.action === 'update-bg') {\n      Object(_modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('morning').then(function (data) {\n        return Object(_modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(pageWrapper, data);\n      });\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCurrentBackgroud */ \"./src/modules/setCurrentBackgroud.js\");\n/* harmony import */ var _modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getCurrentBackground */ \"./src/modules/getCurrentBackground.js\");\n/* harmony import */ var _modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/showNowDate */ \"./src/modules/showNowDate.js\");\n\n\n\nObject(_modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nvar pageWrapper = document.querySelector('.page__wrapper');\nvar pageControls = document.querySelectorAll('.form__toggler');\npageControls.forEach(function (control) {\n  control.addEventListener('click', function (evt) {\n    var currentButton = evt.target;\n\n    if (currentButton.dataset.action === 'update-bg') {\n      Object(_modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('morning').then(function (data) {\n        return Object(_modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(pageWrapper, data);\n      });\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -3870,7 +3870,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setCurrentBackground; });\nfunction setCurrentBackground(element, source) {\n  element.style.backgroundImage = \"url(\".concat(source, \")\");\n  console.log(element);\n}\n\n//# sourceURL=webpack:///./src/modules/setCurrentBackgroud.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setCurrentBackground; });\nfunction setCurrentBackground(element, source) {\n  element.style.backgroundImage = \"url(\".concat(source, \")\");\n}\n\n//# sourceURL=webpack:///./src/modules/setCurrentBackgroud.js?");
+
+/***/ }),
+
+/***/ "./src/modules/showNowDate.js":
+/*!************************************!*\
+  !*** ./src/modules/showNowDate.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return showNowDate; });\nfunction showNowDate() {\n  var html = document.documentElement;\n  var currentLang = html.lang;\n  var now = new Date().toLocaleString(\"\".concat(currentLang), {\n    day: 'numeric',\n    month: 'long',\n    weekday: 'short',\n    hour: 'numeric',\n    minute: 'numeric'\n  });\n  var nowDateView = document.querySelector('.data__item--date');\n  nowDateView.textContent = now.replace(/,/g, '');\n}\n\n//# sourceURL=webpack:///./src/modules/showNowDate.js?");
 
 /***/ }),
 

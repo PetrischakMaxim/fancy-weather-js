@@ -11,7 +11,3 @@ export default function getCurrentDate(date) {
   // соединить компоненты в дату
   return `${d.slice(0, 3).join('.')} ${d.slice(3).join(':')}`;
 }
-
-new Date().toLocaleString('ru', {
-  month: 'long',
-});
