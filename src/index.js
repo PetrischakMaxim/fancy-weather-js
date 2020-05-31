@@ -2,10 +2,12 @@ import setCurrentBackground from './modules/setCurrentBackgroud';
 import getCurrentBackground from './modules/getCurrentBackground';
 import showNowdate from './modules/showNowDate';
 import getCurrentPosition from './modules/getCurrentPosition';
+import hideLoader from './modules/hideLoader';
 
 window.onload = () => {
   showNowdate();
   getCurrentPosition();
+  setTimeout(hideLoader, 1500);
 };
 
 const pageWrapper = document.querySelector('.page__wrapper');
