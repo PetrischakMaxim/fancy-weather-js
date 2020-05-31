@@ -408,8 +408,25 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #9575cd;
+  background-color: rgba(0, 0, 0, 0.7);
   background-image: url("https://source.unsplash.com/user/erondu");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-blend-mode: overlay;
+  transition: background 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.page__wrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  background-image: inherit;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -486,7 +503,7 @@ body {
   padding: 1rem;
   font-weight: 700;
   color: inherit;
-  background-color: #ffeb3b;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid currentColor;
   border-radius: 5px;
   outline: #9575cd;
@@ -501,12 +518,12 @@ body {
 
 .form__toggler:hover {
   color: #7850bf;
-  background-color: #ffe608;
+  background-color: #1a1a1a;
 }
 
 .form__toggler:active {
   color: #6b41b4;
-  background-color: #ffe822;
+  background-color: #0d0d0d;
 }
 
 .form__input,
@@ -552,12 +569,12 @@ body {
   padding: 0;
   list-style: none;
   grid-gap: 2rem;
-  grid-template-areas: "city date" "result descr" "stats stats";
+  grid-template-areas: "city city" "date date" "result descr" "stats stats";
 }
 
 .data__item--city {
   font-weight: bold;
-  font-size: 6rem;
+  font-size: 8rem;
   line-height: 1.1;
   text-transform: uppercase;
   grid-area: city;
@@ -589,9 +606,11 @@ body {
 }
 
 .data__temperature {
+  display: flex;
+  align-items: center;
   margin: 0;
   font-weight: bold;
-  font-size: 8rem;
+  font-size: 6rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -618,10 +637,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  color: #000000;
 }
 
 .location__map {
+  width: 100%;
   margin-bottom: 2rem;
+  overflow: hidden;
   border-radius: 8px;
 }
 
@@ -633,6 +655,10 @@ body {
   overflow: hidden;
   border-radius: inherit;
   cursor: pointer;
+}
+
+.location__inner {
+  padding-top: 100%;
 }
 
 .location__data {
@@ -704,7 +730,13 @@ body {
 
 @media (max-width: 360px) {
   html {
-    font-size: 47.5%;
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 40%;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fancy weather</title>
+
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <!-- Main styles -->
@@ -13,7 +14,6 @@
 
 <body class="page__body">
   <div class="page__wrapper">
-
     <header class="page__header">
       <h1 class="visually-hidden">
         Fancy Weather App
@@ -87,22 +87,32 @@
             <div class="data">
               <ul class="data__list">
                 <li class="data__item data__item--city">
-                  Minsk, Belarus
+                  <div data-name="city"></div>
+                  <div data-name="country"></div>
                 </li>
                 <li class="data__item data__item--date">
 
                 </li>
                 <li class="data__item data__item--result">
-                  <p class="data__temperature">10°С</p>
-
+                  <figure class="data__temperature">
+                    <img data-name="current-icon">
+                    <figcaption data-name="current-day"></figcaption>
+                  </figure>
                 </li>
                 <li class="data__item data__item--descr">
                   <ul class="data__info">
-                    <li class="data__image"></li>
-                    <li>overcast</li>
-                    <li> Feels like: 7°</li>
-                    <li> Wind: 2 m/s</li>
-                    <li>Humidity: 83%</li>
+                    <li>
+                      <b>Status:</b>
+                      <span data-name="current-status"></span>
+                    </li>
+                    <li>
+                      <b>Feelslike:</b>
+                      <span data-name="current-feelslike"></span>
+                    </li>
+                    <li> <b>Wind:</b>
+                      <span data-name="current-wind"></span></li>
+                    <li><b>Humidity:</b>
+                      <span data-name="current-humidity"></span></li>
                   </ul>
                 </li>
                 <li class="data__item data__item--stats">
@@ -130,8 +140,10 @@
           </div>
           <div class="right-col">
             <div class="location">
-              <div class="location__map" id="location-map">
-                <img src="./img/thumbnail.jpg" alt="">
+              <div class="location__map">
+                <div class="location__inner" id="location-map">
+
+                </div>
               </div>
               <table class="location__data">
                 <tr>
@@ -139,8 +151,8 @@
                   <th>Longitude:</th>
                 </tr>
                 <tr>
-                  <td>27°34'</td>
-                  <td>27°34'</td>
+                  <td data-name="latitude">27°34'</td>
+                  <td data-name="longitude">27°34'</td>
                 </tr>
               </table>
             </div>
@@ -152,6 +164,8 @@
   </div>
 
   <!-- JavaScript -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD84rksxMZeG2q_E98XrxnoTm2tzna5_w"></script>
   <script src="./js/bundle.js"></script>
 </body>
 

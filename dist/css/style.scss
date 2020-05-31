@@ -105,7 +105,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  background-color: $success;
+  background-color: rgba($dark, 0.7);
   background-image: url("https://source.unsplash.com/user/erondu");
   background-repeat: no-repeat;
   background-position: center top;
@@ -113,6 +113,26 @@ body {
   background-blend-mode: overlay;
 
   transition: background 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: inherit;
+    background-image: inherit;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-blend-mode: overlay;
+
+    transition: background 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
 }
 
 .container {
@@ -186,7 +206,7 @@ body {
   font-weight: 700;
   color: inherit;
 
-  background-color: $accent;
+  background-color: rgba($dark, 0.5);
   border: 1px solid currentColor;
   border-radius: 5px;
   outline: $success;
@@ -202,12 +222,12 @@ body {
   &:hover {
     color: darken($success, 10%);
 
-    background-color: darken($accent, 10%);
+    background-color: lighten($dark, 10%);
   }
   &:active {
     color: darken($success, 15%);
 
-    background-color: darken($accent, 5%);
+    background-color: lighten($dark, 5%);
   }
 }
 
@@ -254,14 +274,15 @@ body {
   list-style: none;
 
   grid-gap: $offset;
-  grid-template-areas: "city date"
+  grid-template-areas: "city city"
+  "date date"
   "result descr"
   "stats stats";
 }
 
 .data__item--city {
   font-weight: bold;
-  font-size: 6rem;
+  font-size: 8rem;
   line-height: 1.1;
   text-transform: uppercase;
 
@@ -292,10 +313,12 @@ body {
   list-style: none;
 }
 .data__temperature {
+  display: flex;
+  align-items: center;
   margin: 0;
 
   font-weight: bold;
-  font-size: 8rem;
+  font-size: 6rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -320,9 +343,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  color: $dark;
 }
 .location__map {
+  width: 100%;
   margin-bottom: $offset;
+  overflow: hidden;
 
   border-radius: 8px;
   img,
@@ -335,6 +362,9 @@ body {
     border-radius: inherit;
     cursor: pointer;
   }
+}
+.location__inner {
+  padding-top: 100%;
 }
 .location__data {
   width: 100%;
@@ -408,6 +438,12 @@ body {
 
 @media (max-width: 360px) {
   html {
-    font-size: 47.5%;
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 40%;
   }
 }

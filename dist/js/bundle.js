@@ -86,6 +86,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n\n  for (var i = 0, arr2 = new Array(len); i < len; i++) {\n    arr2[i] = arr[i];\n  }\n\n  return arr2;\n}\n\nmodule.exports = _arrayLikeToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayLikeToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) return arrayLikeToArray(arr);\n}\n\nmodule.exports = _arrayWithoutHoles;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _iterableToArray(iter) {\n  if (typeof Symbol !== \"undefined\" && Symbol.iterator in Object(iter)) return Array.from(iter);\n}\n\nmodule.exports = _iterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/iterableToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\n\nmodule.exports = _nonIterableSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/nonIterableSpread.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ \"./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js\");\n\nvar iterableToArray = __webpack_require__(/*! ./iterableToArray */ \"./node_modules/@babel/runtime/helpers/iterableToArray.js\");\n\nvar unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ \"./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js\");\n\nvar nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ \"./node_modules/@babel/runtime/helpers/nonIterableSpread.js\");\n\nfunction _toConsumableArray(arr) {\n  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();\n}\n\nmodule.exports = _toConsumableArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/toConsumableArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return arrayLikeToArray(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(o);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);\n}\n\nmodule.exports = _unsupportedIterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js?");
+
+/***/ }),
+
 /***/ "./node_modules/babel-polyfill/lib/index.js":
 /*!**************************************************!*\
   !*** ./node_modules/babel-polyfill/lib/index.js ***!
@@ -3846,7 +3912,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCurrentBackgroud */ \"./src/modules/setCurrentBackgroud.js\");\n/* harmony import */ var _modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getCurrentBackground */ \"./src/modules/getCurrentBackground.js\");\n/* harmony import */ var _modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/showNowDate */ \"./src/modules/showNowDate.js\");\n\n\n\nObject(_modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nvar pageWrapper = document.querySelector('.page__wrapper');\nvar pageControls = document.querySelectorAll('.form__toggler');\npageControls.forEach(function (control) {\n  control.addEventListener('click', function (evt) {\n    var currentButton = evt.target;\n\n    if (currentButton.dataset.action === 'update-bg') {\n      Object(_modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('morning').then(function (data) {\n        return Object(_modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(pageWrapper, data);\n      });\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/setCurrentBackgroud */ \"./src/modules/setCurrentBackgroud.js\");\n/* harmony import */ var _modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getCurrentBackground */ \"./src/modules/getCurrentBackground.js\");\n/* harmony import */ var _modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/showNowDate */ \"./src/modules/showNowDate.js\");\n/* harmony import */ var _modules_getCurrentPosition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getCurrentPosition */ \"./src/modules/getCurrentPosition.js\");\n\n\n\n\n\nwindow.onload = function () {\n  Object(_modules_showNowDate__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  Object(_modules_getCurrentPosition__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n};\n\nvar pageWrapper = document.querySelector('.page__wrapper');\nvar pageControls = document.querySelectorAll('.form__toggler');\npageControls.forEach(function (control) {\n  control.addEventListener('click', function (evt) {\n    evt.preventDefault();\n    var currentButton = evt.target;\n\n    if (currentButton.dataset.action === 'update-bg') {\n      Object(_modules_getCurrentBackground__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('morning').then(function (data) {\n        return Object(_modules_setCurrentBackgroud__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(pageWrapper, data);\n      });\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -3859,6 +3925,54 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getCurrentBackground; });\nfunction getCurrentBackground(word) {\n  var apiUrl = \"https://api.unsplash.com/photos/random?query=\".concat(word, \"&client_id=w5rS4NQKiTV0yemZ6Ww7VWaBWbLIYB4bsw5-4pbBOl4\");\n  return fetch(apiUrl).then(function (res) {\n    return res.json();\n  }).then(function (data) {\n    return data.urls.regular;\n  });\n}\n\n//# sourceURL=webpack:///./src/modules/getCurrentBackground.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getCurrentPosition.js":
+/*!*******************************************!*\
+  !*** ./src/modules/getCurrentPosition.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getCurrentPosition; });\n/* harmony import */ var _renderMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderMap */ \"./src/modules/renderMap.js\");\n\nfunction getCurrentPosition() {\n  var geoOptions = {\n    enableHighAccuracy: true,\n    timeout: 10 * 1000\n  };\n\n  function getGeoWithNavigator(response) {\n    var _response$coords = response.coords,\n        latitude = _response$coords.latitude,\n        longitude = _response$coords.longitude;\n    Object(_renderMap__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(longitude, latitude);\n  }\n\n  function getGeoWitApi() {\n    var apiSource = \"https://ipinfo.io?token=5e380700ac3c18\";\n    fetch(apiSource).then(function (res) {\n      return res.json();\n    }).then(function (data) {\n      var loc = data.loc;\n      var options = loc.split(',');\n      var coords = {\n        lat: +options[0],\n        lng: +options[1]\n      };\n      Object(_renderMap__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(coords.lng, coords.lat);\n    });\n  }\n\n  navigator.geolocation.getCurrentPosition(getGeoWithNavigator, getGeoWitApi, geoOptions);\n}\n\n//# sourceURL=webpack:///./src/modules/getCurrentPosition.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getWeather.js":
+/*!***********************************!*\
+  !*** ./src/modules/getWeather.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getWeather; });\n// eslint-disable-next-line no-unused-vars\nfunction getWeather(location, period) {\n  var unit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'celsium';\n  var todayView = document.querySelector('[data-name=\"current-day\"');\n  var todayIcon = document.querySelector('[data-name=\"current-icon\"');\n  var todayStatus = document.querySelector('[data-name=\"current-status\"');\n  var todayFeelLike = document.querySelector('[data-name=\"current-feelslike\"');\n  var todayWind = document.querySelector('[data-name=\"current-wind\"');\n  var todayHumidity = document.querySelector('[data-name=\"current-humidity\"');\n  var apiSource = \"https://api.weatherapi.com/v1/forecast.json?key=a0f08157541c4c08ae7173640203105&q=\".concat(location, \"&days=\").concat(period);\n  fetch(apiSource).then(function (res) {\n    return res.json();\n  }).then(function (data) {\n    var _data$current = data.current,\n        _data$current$conditi = _data$current.condition,\n        icon = _data$current$conditi.icon,\n        text = _data$current$conditi.text,\n        temp_c = _data$current.temp_c,\n        temp_f = _data$current.temp_f,\n        feelslike_c = _data$current.feelslike_c,\n        feelslike_f = _data$current.feelslike_f,\n        wind_kph = _data$current.wind_kph,\n        humidity = _data$current.humidity;\n\n    if (unit === 'celsium') {\n      todayView.textContent = \"\".concat(temp_c, \"\\xB0C\");\n      todayFeelLike.textContent = \"\".concat(feelslike_c, \"\\xB0C\");\n    } else {\n      todayView.textContent = \"\".concat(temp_f, \"\\xB0F\");\n      todayFeelLike.textContent = \"\".concat(feelslike_f, \"\\xB0F\");\n    }\n\n    todayIcon.src = icon;\n    todayIcon.alt = text;\n    todayStatus.textContent = text;\n    todayWind.textContent = \"\".concat(Math.round(wind_kph * 1000 / 36000 * 10), \" m/s\");\n    todayHumidity.textContent = \"\".concat(humidity, \"%\");\n  });\n}\n\n//# sourceURL=webpack:///./src/modules/getWeather.js?");
+
+/***/ }),
+
+/***/ "./src/modules/renderMap.js":
+/*!**********************************!*\
+  !*** ./src/modules/renderMap.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return renderMap; });\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ \"./node_modules/@babel/runtime/helpers/toConsumableArray.js\");\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _renderViewData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderViewData */ \"./src/modules/renderViewData.js\");\n/* harmony import */ var _getWeather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getWeather */ \"./src/modules/getWeather.js\");\n\n\n\nfunction renderMap(longitude, latitude) {\n  var _window = window,\n      google = _window.google;\n  var geocoder = new google.maps.Geocoder();\n  var infowindow = new google.maps.InfoWindow();\n  var coords = {\n    lat: latitude,\n    lng: longitude\n  };\n  var mapWrapper = new google.maps.Map(document.getElementById('location-map'), {\n    center: coords,\n    zoom: 8\n  });\n\n  function geocodeLatLng(map) {\n    geocoder.geocode({\n      location: coords\n    }, function (results, status) {\n      if (status === 'OK') {\n        if (results[0]) {\n          var marker = new google.maps.Marker({\n            position: coords,\n            map: map\n          });\n          infowindow.setContent(results[0].formatted_address);\n          var preData = {};\n          results[0].address_components.forEach(function (el) {\n            var types = el.types;\n\n            if (types) {\n              var key = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(types)[0];\n\n              var prop = el.long_name;\n              preData[key] = prop;\n            }\n          });\n          var country = preData.country,\n              locality = preData.locality,\n              administrative_area_level_1 = preData.administrative_area_level_1,\n              postal_code = preData.postal_code;\n          var mapData = {\n            coords: coords,\n            city: locality,\n            state: administrative_area_level_1,\n            country: country,\n            postalCode: postal_code\n          };\n          Object(_renderViewData__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(mapData);\n          Object(_getWeather__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(country, 1, 'celsium');\n          infowindow.open(map, marker);\n        }\n      } else {\n        window.alert(\"Geocoder failed due to: \".concat(status));\n      }\n    });\n  }\n\n  geocodeLatLng(mapWrapper);\n}\n\n//# sourceURL=webpack:///./src/modules/renderMap.js?");
+
+/***/ }),
+
+/***/ "./src/modules/renderViewData.js":
+/*!***************************************!*\
+  !*** ./src/modules/renderViewData.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return renderVieData; });\nfunction renderVieData(data) {\n  var city = data.city,\n      country = data.country,\n      _data$coords = data.coords,\n      lat = _data$coords.lat,\n      lng = _data$coords.lng;\n  var viewCity = document.querySelector('[data-name=\"city\"]');\n  var viewCountry = document.querySelector('[data-name=\"country\"]');\n  var viewLatitude = document.querySelector('[data-name=\"latitude\"]');\n  var viewLongitude = document.querySelector('[data-name=\"longitude\"]');\n  viewLatitude.textContent = lat;\n  viewLongitude.textContent = lng;\n  viewCity.textContent = city;\n  viewCountry.textContent = country;\n}\n\n//# sourceURL=webpack:///./src/modules/renderViewData.js?");
 
 /***/ }),
 
@@ -3882,7 +3996,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return showNowDate; });\nfunction showNowDate() {\n  var html = document.documentElement;\n  var currentLang = html.lang;\n  var now = new Date().toLocaleString(\"\".concat(currentLang), {\n    day: 'numeric',\n    month: 'long',\n    weekday: 'short',\n    hour: 'numeric',\n    minute: 'numeric'\n  });\n  var nowDateView = document.querySelector('.data__item--date');\n  nowDateView.textContent = now.replace(/,/g, '');\n}\n\n//# sourceURL=webpack:///./src/modules/showNowDate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return showNowDate; });\nfunction showNowDate() {\n  var html = document.documentElement;\n  var currentLang = html.lang;\n  var nowDateView = document.querySelector('.data__item--date');\n  setInterval(function () {\n    var now = new Date().toLocaleString(\"\".concat(currentLang), {\n      day: 'numeric',\n      month: 'long',\n      weekday: 'short',\n      hour: 'numeric',\n      minute: 'numeric',\n      second: 'numeric'\n    });\n    nowDateView.textContent = now.replace(/,/g, '');\n  }, 100);\n}\n\n//# sourceURL=webpack:///./src/modules/showNowDate.js?");
 
 /***/ }),
 
