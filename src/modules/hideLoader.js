@@ -1,4 +1,7 @@
-export default function hideLoader() {
+export default function hideLoader(delay = 1000) {
   const loader = document.querySelector('.loader-block');
-  loader.classList.add('hidden');
+
+  setTimeout(() => {
+    loader.classList.add('hidden');
+  }, delay);
 }

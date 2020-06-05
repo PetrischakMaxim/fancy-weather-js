@@ -1,13 +1,11 @@
-import setCurrentBackground from './modules/setCurrentBackgroud';
 import getCurrentBackground from './modules/getCurrentBackground';
-import showNowdate from './modules/showNowDate';
 import getCurrentPosition from './modules/getCurrentPosition';
-import hideLoader from './modules/hideLoader';
+import setCurrentBackground from './modules/setCurrentBackgroud';
+import showNowdate from './modules/showNowDate';
 
 window.onload = () => {
   showNowdate();
   getCurrentPosition();
-  setTimeout(hideLoader, 1500);
 };
 
 const pageWrapper = document.querySelector('.page__wrapper');

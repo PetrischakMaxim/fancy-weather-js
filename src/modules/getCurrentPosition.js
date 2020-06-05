@@ -1,3 +1,4 @@
+import hideLoader from './hideLoader';
 import renderMap from './renderMap';
 
 export default function getCurrentPosition() {
@@ -9,6 +10,7 @@ export default function getCurrentPosition() {
   function getGeoWithNavigator(response) {
     const { latitude, longitude } = response.coords;
     renderMap(longitude, latitude);
+    hideLoader();
   }
 
   function getGeoWitApi() {
@@ -23,6 +25,7 @@ export default function getCurrentPosition() {
           lng: +options[1],
         };
         renderMap(coords.lng, coords.lat);
+        hideLoader();
       });
   }
 
